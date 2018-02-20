@@ -1,0 +1,23 @@
+* {
+  background-color: green;
+  color: white;
+  outline: blue dashed;
+}
+
+body {
+  width: 960px;
+  margin: 0 auto;
+}
+
+ul {
+  background-color: orange;
+}
+
+ul li {
+  display: inline-block;
+  padding: 10px;
+}
+
+ul li img {
+  width: 200px;
+}
