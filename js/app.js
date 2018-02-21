@@ -4,7 +4,7 @@ MallPic.items = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum',
 MallPic.allImages = [];
 MallPic.dupeView = [];
 
-var totalClickCounter = 25;
+var totalClickCounter = 5;
 
 MallPic.container = document.getElementById('pics-container');
 MallPic.productPlace = [document.getElementById('mall-pic1'), document.getElementById('mall-pic2'), document.getElementById('mall-pic3')];
@@ -93,19 +93,51 @@ var data = {
   labels: MallPic.items,
   datasets: [
     {
+      label: 'Total Votes',
       data: chartClicks,
       backgroundColor: [
-        '#3C1247',
-        /*'#A18749',
-        '#45E0A6',
-        '#471312',
-        '#194361',
-        '#9A45E0',
-        '#2208A1',
-        '#2BA116',*/
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
       ],
       hoverBackgroundColor: [
-        'darkgreen',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
       ]
     }
   ]
@@ -120,7 +152,7 @@ prodChart = new Chart(ctx, {
       scales: {
         yAxes: [{
           ticks: {
-            max: 20,
+            max: 7,
             min: 0,
             stepSize: 1.0
           }
