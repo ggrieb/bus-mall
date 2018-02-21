@@ -1,7 +1,8 @@
+/*colors: background-color: #658199 accent-color #00FFED  */
+
 * {
-  background-color: green;
+  background-color: #658199;
   color: white;
-  outline: blue dashed;
 }
 
 body {
@@ -10,7 +11,8 @@ body {
 }
 
 ul {
-  background-color: orange;
+  background-color: #1477CC;
+  border: 5px solid #00FFED;
 }
 
 ul li {
@@ -20,4 +22,5 @@ ul li {
 
 ul li img {
   width: 200px;
+  height: 200px;
 }
