@@ -50,12 +50,14 @@ function clickHandler(event) {
     MallPic.container.removeEventListener('click', clickHandler);
     MallPic.container.style.display = 'none';
     displayList();
+    drawChart();
   }
   totalClickCounter -= 1;
   console.log(totalClickCounter);
   for (var i = 0; i < MallPic.items.length; i++) {
     if (event.target.alt === MallPic.allImages[i].name) {
       MallPic.allImages[i].clicks += 1;
+      updateChartArray();
     }
   }
   createRandomDisplay();
@@ -75,41 +77,58 @@ MallPic.container.addEventListener('click', clickHandler);
 
 //+++++++chart*******
 
+var prodChart;
+//var chartDrawn = false;
+var chartClicks = [];
+var chartViews = [];
 
-var ctx = document.getElementById("prodChart");
-var prodChart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
+function updateChartArray() {
+  for (var i = 0; i < MallPic.items.length; i++) {
+    chartClicks[i] = MallPic.allImages[i].clicks;
+    chartViews[i] = MallPic.allImages[i].views;
+  }
+}
+
+var data = {
+  labels: MallPic.items,
+  datasets: [
+    {
+      data: chartClicks,
       backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 132, 0.2)',
-        'rgba(255, 206, 132, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
+        '#3C1247',
+        /*'#A18749',
+        '#45E0A6',
+        '#471312',
+        '#194361',
+        '#9A45E0',
+        '#2208A1',
+        '#2BA116',*/
       ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 132, 1)',
-        'rgba(255, 206, 132, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-      ],
-      borderWidth: 1
-      }]
-    },
+      hoverBackgroundColor: [
+        'darkgreen',
+      ]
+    }
+  ]
+}
+
+function drawChart() {
+var ctx = document.getElementById('prodChart');
+prodChart = new Chart(ctx, {
+  type: 'bar',
+  data: data,
     options: {
       scales: {
         yAxes: [{
           ticks: {
-            beginAtZero:true
+            max: 20,
+            min: 0,
+            stepSize: 1.0
           }
         }]
       }
     }
 });
+}
+
+
+/*["R2D2 Bag", "Banana Slicer", "I-Bathroom Stand", "Toeless Rainboots", "All-In-One Bkfst Maker", "Meatball Bubblegum", "Chair", "Cthulhu", "Dog Duckbill", "Dragon Meat", "Pen Silverware", "Pet Sweeper", "Pizza Scissors", "Shark Sleeping Bag", "Baby Sweeper", "new MallPic", "Tauntaun Sleeping Bag", "Unicorn Meat", "USB Tentacle", "Water Can", "Wine Glass"]*/
