@@ -4,7 +4,7 @@ MallPic.items = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum',
 MallPic.allImages = [];
 MallPic.dupeView = [];
 
-var totalClickCounter = 24;
+var totalClickCounter = 24; //set to 24
 
 MallPic.container = document.getElementById('pics-container');
 MallPic.productPlace = [document.getElementById('mall-pic1'), document.getElementById('mall-pic2'), document.getElementById('mall-pic3')];
@@ -49,8 +49,8 @@ function clickHandler(event) {
   if (totalClickCounter < 1) {
     MallPic.container.removeEventListener('click', clickHandler);
     MallPic.container.style.display = 'none';
-    //displayList();
     drawChart();
+    displayList();
     localStorage.jsonImages = JSON.stringify(MallPic.allImages);
   }
   totalClickCounter -= 1;
@@ -65,10 +65,18 @@ function clickHandler(event) {
 }
 
 function displayList() {
-  for (var i = 0; i < MallPic.allImages.length; i++) {
+  for (var i = 0; i < 20; i++) {
     var liEl = document.createElement('li');
     var conversion = (MallPic.allImages[i].clicks / MallPic.allImages[i].views * 100).toFixed(1);
-    liEl.textContent = MallPic.allImages[i].name + ' has ' + MallPic.allImages[i].clicks + ' votes, out of ' + MallPic.allImages[i].views + ' views for a rate of ' + conversion + '%';
+    liEl.textContent = MallPic.allImages[i].name + ' has ' + MallPic.allImages[i].clicks + ' votes, out of ' + MallPic.allImages[i].views + ' views, for a rate of ' + conversion + '%';
+    if (conversion > 45) {
+      liEl.style.color = 'white'
+      liEl.style.backgroundColor = 'lime';
+    }
+    if (conversion < 25) {
+      liEl.style.color = 'white';
+      liEl.style.backgroundColor = 'red';
+    }
     MallPic.list.appendChild(liEl);
   }
 }
@@ -98,6 +106,9 @@ function updateChartArray() {
     chartViews[i] = MallPic.allImages[i].views;
   }
 }
+
+Chart.defaults.global.defaultFontColor = 'white';
+Chart.defaults.global.defaultFontSize = 14;
 
 var data = {
   labels: MallPic.items,
@@ -153,8 +164,6 @@ var data = {
   ]
 }
 
-Chart.defaults.global.defaultFontColor = 'white';
-Chart.defaults.global.defaultFontSize = 14;
 function drawChart() {
 var ctx = document.getElementById('prodChart');
 prodChart = new Chart(ctx, {
@@ -182,5 +191,4 @@ prodChart = new Chart(ctx, {
 
 /*["R2D2 Bag", "Banana Slicer", "I-Bathroom Stand", "Toeless Rainboots", "All-In-One Bkfst Maker", "Meatball Bubblegum", "Chair", "Cthulhu", "Dog Duckbill", "Dragon Meat", "Pen Silverware", "Pet Sweeper", "Pizza Scissors", "Shark Sleeping Bag", "Baby Sweeper", "new MallPic", "Tauntaun Sleeping Bag", "Unicorn Meat", "USB Tentacle", "Water Can", "Wine Glass"]*/
 
-/*Local Data Storage*/
 

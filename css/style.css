@@ -19,7 +19,7 @@ header {
 
 #welcome {
   background-color: gray;
-  border: 5px groove gray;
+  border: 5px groove white;
   border-radius: 30pt;
   padding-left: 40px;
   padding-right: 40px;
@@ -55,8 +55,24 @@ header {
   height: 200px;
 }
 
-ul {
-  background-color: #1477CC;
-  border: 5px solid #00FFED;
+#total-list {
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 550px;
+  margin: 0 auto;
+  margin-bottom: 25px;
 }
 
+#total-list li {
+  background-color: gray;
+  border: 2px groove white;
+  border-radius: 30px;
+  display: grid;
+  padding: 5px;
+}
+
+footer {
+  padding-top: 15px;
+  border-top: 10px solid #00FFED;
+}
