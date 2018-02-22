@@ -11,11 +11,36 @@ body {
   margin: 0 auto;
 }
 
+header {
+  width: 960px;
+  border-bottom: 10px solid #00FFED;
+  padding-bottom: 10px; 
+}
+
+#welcome {
+  background-color: gray;
+  border: 5px groove gray;
+  border-radius: 30pt;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+#welcome h1 {
+  background-color: gray;
+}
+
+#welcome p {
+  font-size: 20px;
+  background-color: gray;
+}
+
 #pics-container {
   text-align: center;
   background-color:#1477CC;
   border: 5px solid #00FFED;
-  width: 800px;
+  width: 680px;
   margin: 0 auto;
 } 
 

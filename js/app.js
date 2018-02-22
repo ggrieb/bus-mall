@@ -49,7 +49,7 @@ function clickHandler(event) {
   if (totalClickCounter < 1) {
     MallPic.container.removeEventListener('click', clickHandler);
     MallPic.container.style.display = 'none';
-    displayList();
+    //displayList();
     drawChart();
     localStorage.jsonImages = JSON.stringify(MallPic.allImages);
   }
@@ -103,68 +103,76 @@ var data = {
   labels: MallPic.items,
   datasets: [
     {
-      label: 'Total Votes',
+      label: 'Total Selections',
       data: chartClicks,
       backgroundColor: [
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
-        'gold',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
       ],
       hoverBackgroundColor: [
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
-        'lime',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
       ]
     }
   ]
 }
 
+Chart.defaults.global.defaultFontColor = 'white';
+Chart.defaults.global.defaultFontSize = 14;
 function drawChart() {
 var ctx = document.getElementById('prodChart');
 prodChart = new Chart(ctx, {
   type: 'bar',
   data: data,
     options: {
+      legend: {
+        labels: {
+          fontSize: 40,
+          fontColor: 'gold',
+        }
+      },
       scales: {
         yAxes: [{
           ticks: {
-            max: 20,
+            max: 50,
             min: 0,
-            stepSize: 1.0
+            stepSize: 5.0
           }
         }]
       }
