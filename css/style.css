@@ -44,13 +44,12 @@ header {
   padding-top: 10px;
   padding-bottom: 5px;
   text-align: center;
-  background-color:#1477CC;
-  border: 5px solid #00FFED;
   width: 960px;
   margin: 0 auto;
 } 
 
 #pics-container img {
+  border: white groove;
   border-radius: 30px;
   display: inline-block;
   padding: 10px;
