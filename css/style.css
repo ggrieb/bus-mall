@@ -11,11 +11,40 @@ body {
   margin: 0 auto;
 }
 
+header {
+  width: 960px;
+  border-bottom: 10px solid #00FFED;
+  padding-bottom: 10px; 
+}
+
+#welcome {
+  background-color: gray;
+  border: 5px groove white;
+  border-radius: 30pt;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+#welcome h1 {
+  background-color: gray;
+}
+
+#welcome p {
+  font-size: 20px;
+  background-color: gray;
+}
+
+#signature {
+  font-style: italic;
+}
+
 #pics-container {
   text-align: center;
   background-color:#1477CC;
   border: 5px solid #00FFED;
-  width: 800px;
+  width: 680px;
   margin: 0 auto;
 } 
 
@@ -26,8 +55,24 @@ body {
   height: 200px;
 }
 
-ul {
-  background-color: #1477CC;
-  border: 5px solid #00FFED;
+#total-list {
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 550px;
+  margin: 0 auto;
+  margin-bottom: 25px;
 }
 
+#total-list li {
+  background-color: gray;
+  border: 2px groove white;
+  border-radius: 30px;
+  display: grid;
+  padding: 5px;
+}
+
+footer {
+  padding-top: 15px;
+  border-top: 10px solid #00FFED;
+}

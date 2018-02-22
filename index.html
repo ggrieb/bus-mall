@@ -7,12 +7,19 @@
   <link rel="CSS reset" type="text/css" href="css/reset.css"/>
   <link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-  <title>Bus Mall</title>
+  <title>Metro BusMall</title>
 </head>
 
 <body>
-  <h1>Please click on the item that you like the most of the three displayed</h1>
-  <canvas id="prodChart" width="400" height="200"></canvas>
+  <header>
+    <img src="img/metro-busmall960bw.jpg"/>
+  </header>
+  <div id="welcome">
+  <h1>Welcome!</h1>
+  <p>In the area below are products Metro BusMall is considering listing in our next catalogue.  Please click on the product that you like best.  After 25 clicks a graph will display your choices (as well as others).  To retake this survey, please refresh your browser.</p>
+  <p>Thank you for your participation.  Metro BusMall appreciates that when you ride Metro, Metro BusMall is your only mall, on the bus.</p>
+  <p id="signature">-Metro BusMall</p>
+  </div>
   
   <div id="pics-container">
     <img id="mall-pic1" src="" alt="" title=""/>
@@ -20,10 +27,14 @@
     <img id="mall-pic3" src="" alt="" title=""/>
   </div>  
 
+  <canvas id="prodChart" width="400" height="200"></canvas>
+
   <ul id="total-list">
   </ul>
 
-  <footer></footer>
+  <footer>
+    <img src="img/metro-busmall960bwfoot.jpg"/>
+  </footer>
 <script src="js/app.js"></script>
 </body>
 </html>
