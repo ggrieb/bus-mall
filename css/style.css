@@ -36,6 +36,10 @@ header {
   background-color: gray;
 }
 
+#signature {
+  font-style: italic;
+}
+
 #pics-container {
   text-align: center;
   background-color:#1477CC;
