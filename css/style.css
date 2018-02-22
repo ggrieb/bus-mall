@@ -1,8 +1,9 @@
 /*colors: background-color: #658199 accent-color #00FFED  */
 
 * {
-  background-color: #658199;
+  background-color: hsl(208, 20%, 50%);
   color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 body {
@@ -10,17 +11,23 @@ body {
   margin: 0 auto;
 }
 
+#pics-container {
+  text-align: center;
+  background-color:#1477CC;
+  border: 5px solid #00FFED;
+  width: 800px;
+  margin: 0 auto;
+} 
+
+#pics-container img {
+  display: inline-block;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+}
+
 ul {
   background-color: #1477CC;
   border: 5px solid #00FFED;
 }
 
-ul li {
-  display: inline-block;
-  padding: 10px;
-}
-
-ul li img {
-  width: 200px;
-  height: 200px;
-}

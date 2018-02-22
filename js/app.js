@@ -4,7 +4,7 @@ MallPic.items = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum',
 MallPic.allImages = [];
 MallPic.dupeView = [];
 
-var totalClickCounter = 25;
+var totalClickCounter = 24;
 
 MallPic.container = document.getElementById('pics-container');
 MallPic.productPlace = [document.getElementById('mall-pic1'), document.getElementById('mall-pic2'), document.getElementById('mall-pic3')];
@@ -51,6 +51,7 @@ function clickHandler(event) {
     MallPic.container.style.display = 'none';
     displayList();
     drawChart();
+    localStorage.jsonImages = JSON.stringify(MallPic.allImages);
   }
   totalClickCounter -= 1;
   console.log(totalClickCounter);
@@ -82,6 +83,15 @@ var prodChart;
 var chartClicks = [];
 var chartViews = [];
 
+if (localStorage.jsonImages) {
+  console.log('found localStorage');
+  MallPic.allImages = JSON.parse(localStorage.jsonImages);
+} else {
+  for (var i = 0; i < MallPic.items.length; i++) {
+  new MallPic(MallPic.items[i]);
+  }
+}
+
 function updateChartArray() {
   for (var i = 0; i < MallPic.items.length; i++) {
     chartClicks[i] = MallPic.allImages[i].clicks;
@@ -93,19 +103,51 @@ var data = {
   labels: MallPic.items,
   datasets: [
     {
+      label: 'Total Votes',
       data: chartClicks,
       backgroundColor: [
-        '#3C1247',
-        /*'#A18749',
-        '#45E0A6',
-        '#471312',
-        '#194361',
-        '#9A45E0',
-        '#2208A1',
-        '#2BA116',*/
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
+        'gold',
       ],
       hoverBackgroundColor: [
-        'darkgreen',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
+        'lime',
       ]
     }
   ]
@@ -130,5 +172,7 @@ prodChart = new Chart(ctx, {
 });
 }
 
-
 /*["R2D2 Bag", "Banana Slicer", "I-Bathroom Stand", "Toeless Rainboots", "All-In-One Bkfst Maker", "Meatball Bubblegum", "Chair", "Cthulhu", "Dog Duckbill", "Dragon Meat", "Pen Silverware", "Pet Sweeper", "Pizza Scissors", "Shark Sleeping Bag", "Baby Sweeper", "new MallPic", "Tauntaun Sleeping Bag", "Unicorn Meat", "USB Tentacle", "Water Can", "Wine Glass"]*/
+
+/*Local Data Storage*/
+
