@@ -4,7 +4,7 @@ MallPic.items = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum',
 MallPic.allImages = [];
 MallPic.dupeView = [];
 
-var totalClickCounter = 5;
+var totalClickCounter = 24;
 
 MallPic.container = document.getElementById('pics-container');
 MallPic.productPlace = [document.getElementById('mall-pic1'), document.getElementById('mall-pic2'), document.getElementById('mall-pic3')];
@@ -51,6 +51,7 @@ function clickHandler(event) {
     MallPic.container.style.display = 'none';
     displayList();
     drawChart();
+    localStorage.jsonImages = JSON.stringify(MallPic.allImages);
   }
   totalClickCounter -= 1;
   console.log(totalClickCounter);
@@ -81,6 +82,15 @@ var prodChart;
 //var chartDrawn = false;
 var chartClicks = [];
 var chartViews = [];
+
+if (localStorage.jsonImages) {
+  console.log('found localStorage');
+  MallPic.allImages = JSON.parse(localStorage.jsonImages);
+} else {
+  for (var i = 0; i < MallPic.items.length; i++) {
+  new MallPic(MallPic.items[i]);
+  }
+}
 
 function updateChartArray() {
   for (var i = 0; i < MallPic.items.length; i++) {
@@ -152,7 +162,7 @@ prodChart = new Chart(ctx, {
       scales: {
         yAxes: [{
           ticks: {
-            max: 7,
+            max: 20,
             min: 0,
             stepSize: 1.0
           }
@@ -162,5 +172,7 @@ prodChart = new Chart(ctx, {
 });
 }
 
-
 /*["R2D2 Bag", "Banana Slicer", "I-Bathroom Stand", "Toeless Rainboots", "All-In-One Bkfst Maker", "Meatball Bubblegum", "Chair", "Cthulhu", "Dog Duckbill", "Dragon Meat", "Pen Silverware", "Pet Sweeper", "Pizza Scissors", "Shark Sleeping Bag", "Baby Sweeper", "new MallPic", "Tauntaun Sleeping Bag", "Unicorn Meat", "USB Tentacle", "Water Can", "Wine Glass"]*/
+
+/*Local Data Storage*/
+
