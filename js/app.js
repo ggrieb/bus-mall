@@ -4,7 +4,7 @@ MallPic.items = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum',
 MallPic.allImages = [];
 MallPic.dupeView = [];
 
-var totalClickCounter = 24; //set to 24
+var totalClickCounter = 24;
 
 MallPic.container = document.getElementById('pics-container');
 MallPic.productPlace = [document.getElementById('mall-pic1'), document.getElementById('mall-pic2'), document.getElementById('mall-pic3')];
@@ -84,10 +84,9 @@ function displayList() {
 createRandomDisplay();
 MallPic.container.addEventListener('click', clickHandler);
 
-//+++++++chart*******
+//+++++chart+++++
 
 var prodChart;
-//var chartDrawn = false;
 var chartClicks = [];
 var chartViews = [];
 
