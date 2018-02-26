@@ -179,16 +179,12 @@ prodChart = new Chart(ctx, {
       scales: {
         yAxes: [{
           ticks: {
-            max: 50,
+            max: 20,
             min: 0,
-            stepSize: 5.0
+            stepSize: 2.0
           }
         }]
       }
     }
 });
 }
-
-/*["R2D2 Bag", "Banana Slicer", "I-Bathroom Stand", "Toeless Rainboots", "All-In-One Bkfst Maker", "Meatball Bubblegum", "Chair", "Cthulhu", "Dog Duckbill", "Dragon Meat", "Pen Silverware", "Pet Sweeper", "Pizza Scissors", "Shark Sleeping Bag", "Baby Sweeper", "new MallPic", "Tauntaun Sleeping Bag", "Unicorn Meat", "USB Tentacle", "Water Can", "Wine Glass"]*/
-
-
